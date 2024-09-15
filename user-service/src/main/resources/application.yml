@@ -1,0 +1,28 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: USER-SERVICE
+  zipkin:
+    base-url:  http://127.0.0.1:9411/
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: Sheliya@123
+    url: jdbc:mysql://localhost:3306/user
+    username: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    instance:
+      hostName: localhost
